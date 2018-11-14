@@ -50,10 +50,6 @@ class FlatsController < ApplicationController
     params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
   end
 
-  def val_search
-    params.require(:query).permit
-  end
-
   def find_flat
     @flat = Flat.find(params[:id])
   end
