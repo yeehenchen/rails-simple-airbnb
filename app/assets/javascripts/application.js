@@ -13,4 +13,11 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+document.addEventListener("DOMContentLoaded", function(){
+  const alertbtn = document.querySelector('#alertbtn')
+  alertbtn.addEventListener('click', function(){
+    alertbtn.parentNode.hidden = true;
+  })
+});

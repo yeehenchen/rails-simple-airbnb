@@ -1,0 +1,44 @@
+<% if notice %>
+  <div class="alert alert-info">
+    <button type="button" class="close" id="alertbtn">×</button>
+    <p><%= notice %></p>
+  </div>
+<% end %>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Flats</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @flats.each do |f| %>
+      <div class="col-4">
+        <div class="flex-card">
+          <div class="card-body">
+            <h5 class="card-title"><%= f.name %></h5>
+            <h6 class="card-subtitle text-muted"><%= f.address %></h6>
+            <p class="card-text"><%= f.description %></p>
+            <ul class="list-inline">
+              <li class="inline-items">
+                <i class="material-icons mr-2">people</i>
+                <span><%= f.number_of_guests %></span>
+              </li>
+              <li class="inline-items">
+                <i class="material-icons mr-2">attach_money</i>
+                <span><%= f.number_of_guests %></span>
+              </li>
+            </ul>
+            <%= link_to "More details", flat_path(f) %>
+            <%= link_to "Edit", edit_flat_path(f) %>
+            <%= link_to "Remove", flat_path(f), method: :delete, data: {confirm:"Are you sure?"} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>
